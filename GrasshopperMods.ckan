@@ -1,0 +1,89 @@
+{
+	"kind": "metapackage",
+	"abstract": "A list of modules installed on the auto KSP instance",
+	"name": "installed-auto",
+	"license": "unknown",
+	"version": "2019.05.20.10.09.53",
+	"identifier": "installed-auto",
+	"spec_version": "v1.6",
+	"recommends": [
+		{
+			"name": "FMRSContinued"
+		},
+		{
+			"name": "ModuleManager"
+		},
+		{
+			"name": "RecoveryController"
+		},
+		{
+			"name": "ToolbarController"
+		},
+		{
+			"name": "ClickThroughBlocker"
+		},
+		{
+			"name": "MechJeb2"
+		},
+		{
+			"name": "MechJebForAll"
+		},
+		{
+			"name": "KerbalEngineerRedux"
+		},
+		{
+			"name": "TundraExploration"
+		},
+		{
+			"name": "NearFutureSolar-Core"
+		},
+		{
+			"name": "NearFutureProps"
+		},
+		{
+			"name": "SmokeScreen"
+		},
+		{
+			"name": "SpaceXLegs"
+		},
+		{
+			"name": "B9PartSwitch"
+		},
+		{
+			"name": "AnimatedDecouplers"
+		},
+		{
+			"name": "HangerExtenderExtended"
+		},
+		{
+			"name": "RealPlume"
+		},
+		{
+			"name": "RealPlume-StockConfigs"
+		},
+		{
+			"name": "EngineLighting"
+		},
+		{
+			"name": "FASA"
+		},
+		{
+			"name": "ProceduralParts"
+		},
+		{
+			"name": "kOS"
+		},
+		{
+			"name": "Trajectories"
+		},
+		{
+			"name": "TweakScale"
+		},
+		{
+			"name": "CommunityResourcePack"
+		},
+		{
+			"name": "CommunityCategoryKit"
+		}
+	]
+}
