@@ -1,4 +1,15 @@
-countdown().
+set i to 1
+until i = 0
+{
+    if SHIP:STATUS = "Landed"
+    {
+        BREAK.
+    }
+    if SHIP:STATUS = "PRELAUNCH"
+    {
+        countdown().
+    }
+}
 function countdown
 {
     clearscreen.
@@ -95,7 +106,7 @@ function Landing
     set cluster[2]:thrustlimit to 100.
     set cluster[3]:thrustlimit to 0.
     set cluster[4]:thrustlimit to 100.
-    until SHIP:STATUS = "SPLASHED"
+    until SHIP:STATUS = "LANDED"
     {
         lock throttle to 0.00.
         lock heading to up.
@@ -154,7 +165,7 @@ function Landing
                 print "Landing" at (0,25).
                 lock throttle to 1.00.
                 lock steering to up.
-                until SHIP:STATUS = "SPLASHED" 
+                until SHIP:STATUS = "LANDED" 
                 { 
                     LIST engines IN cluster.
                     if SHIP:VERTICALSPEED < -20
@@ -208,7 +219,7 @@ function Landing
                     }
                     if SHIP:ALTITUDE < 50
                     {
-                        until SHIP:STATUS = "SPLASHED"
+                        until SHIP:STATUS = "LANDED"
                         {
                             LIST engines IN cluster.
                             if SHIP:VERTICALSPEED < -20
@@ -250,12 +261,13 @@ function Landing
             }
         }
     }
-    if SHIP:STATUS = "SPLASHED"
+    if SHIP:STATUS = "LANDED" 
     {
         print "Touchdown".
         print "Welcome Home".
         lock throttle to 0.
         wait 2.
         BRAKES off.
+
     }
 }
