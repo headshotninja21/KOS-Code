@@ -1,4 +1,4 @@
-set i to 1
+set i to 1.
 until i = 0
 {
     if SHIP:STATUS = "Landed"
