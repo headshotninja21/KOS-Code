@@ -1,0 +1,332 @@
+{
+	"kind": "metapackage",
+	"abstract": "A list of modules installed on the auto KSP instance",
+	"name": "installed-auto",
+	"license": "unknown",
+	"version": "2019.08.10.08.40.20",
+	"identifier": "installed-auto",
+	"spec_version": "v1.6",
+	"recommends": [
+		{
+			"name": "CustomBarnKit"
+		},
+		{
+			"name": "MechJebForAll"
+		},
+		{
+			"name": "KSCExtended"
+		},
+		{
+			"name": "kOS"
+		},
+		{
+			"name": "NearFutureElectrical"
+		},
+		{
+			"name": "HangerExtenderExtended"
+		},
+		{
+			"name": "NGC3371-Skybox"
+		},
+		{
+			"name": "ProceduralFairings"
+		},
+		{
+			"name": "ProceduralParts"
+		},
+		{
+			"name": "RealChute"
+		},
+		{
+			"name": "RealPlume"
+		},
+		{
+			"name": "RealPlume-StockConfigs"
+		},
+		{
+			"name": "ReentryParticleEffect"
+		},
+		{
+			"name": "ReStock"
+		},
+		{
+			"name": "ReStockPlus"
+		},
+		{
+			"name": "Scatterer"
+		},
+		{
+			"name": "Scatterer-config"
+		},
+		{
+			"name": "StationPartsExpansion"
+		},
+		{
+			"name": "StationPartsExpansionRedux"
+		},
+		{
+			"name": "StockVisualEnhancements"
+		},
+		{
+			"name": "Strategia"
+		},
+		{
+			"name": "surfacelights"
+		},
+		{
+			"name": "SVE-HighResolution"
+		},
+		{
+			"name": "Trajectories"
+		},
+		{
+			"name": "ModuleManager"
+		},
+		{
+			"name": "B9PartSwitch"
+		},
+		{
+			"name": "UniversalStorage2"
+		},
+		{
+			"name": "USI-LS"
+		},
+		{
+			"name": "FMRSContinued"
+		},
+		{
+			"name": "BluedogDB"
+		},
+		{
+			"name": "ShuttleLiftingBodyCormorantAeronology"
+		},
+		{
+			"name": "TweakScale"
+		},
+		{
+			"name": "KerbalEngineerRedux"
+		},
+		{
+			"name": "CommunityTechTree"
+		},
+		{
+			"name": "EngineLighting"
+		},
+		{
+			"name": "ContractConfigurator-KerbinSpaceStation"
+		},
+		{
+			"name": "NearFutureProps"
+		},
+		{
+			"name": "ClickThroughBlocker"
+		},
+		{
+			"name": "RemoteTech"
+		},
+		{
+			"name": "NearFutureElectrical-Core"
+		},
+		{
+			"name": "NearFutureSpacecraft"
+		},
+		{
+			"name": "MainSailorTextures-Complete"
+		},
+		{
+			"name": "MainSailorTextures-Essentials"
+		},
+		{
+			"name": "FASA"
+		},
+		{
+			"name": "ContractConfigurator-Tourism"
+		},
+		{
+			"name": "SmokeScreen"
+		},
+		{
+			"name": "KerbalKonstructs"
+		},
+		{
+			"name": "TundraSpaceCenter"
+		},
+		{
+			"name": "StockalikeStructures"
+		},
+		{
+			"name": "ToolbarController"
+		},
+		{
+			"name": "CommunityResourcePack"
+		},
+		{
+			"name": "NearFutureConstruction"
+		},
+		{
+			"name": "NearFutureSolar-Core"
+		},
+		{
+			"name": "TextureReplacer"
+		},
+		{
+			"name": "Scatterer-sunflare"
+		},
+		{
+			"name": "EnvironmentalVisualEnhancements"
+		},
+		{
+			"name": "ContractConfigurator"
+		},
+		{
+			"name": "SpaceXLegs"
+		},
+		{
+			"name": "AnimatedDecouplers"
+		},
+		{
+			"name": "USITools"
+		},
+		{
+			"name": "CommunityCategoryKit"
+		},
+		{
+			"name": "DMagicScienceAnimate"
+		},
+		{
+			"name": "FirespitterCore"
+		},
+		{
+			"name": "BetterBurnTime"
+		},
+		{
+			"name": "CapCom"
+		},
+		{
+			"name": "DistantObject"
+		},
+		{
+			"name": "DistantObject-default"
+		},
+		{
+			"name": "RecoveryController"
+		},
+		{
+			"name": "NearFutureSolar"
+		},
+		{
+			"name": "Karbonite"
+		},
+		{
+			"name": "ContractRewardModifier"
+		},
+		{
+			"name": "ContractsWindowPlus"
+		},
+		{
+			"name": "ProgressParser"
+		},
+		{
+			"name": "ContractParser"
+		},
+		{
+			"name": "ExtraPlanetaryLaunchpads"
+		},
+		{
+			"name": "MechJeb2"
+		},
+		{
+			"name": "TundraExploration"
+		},
+		{
+			"name": "USI-Core"
+		},
+		{
+			"name": "KAS"
+		},
+		{
+			"name": "KIS"
+		},
+		{
+			"name": "EasyVesselSwitch"
+		},
+		{
+			"name": "KerbalAlarmClock"
+		},
+		{
+			"name": "TriggerAu-Flags"
+		},
+		{
+			"name": "InfernalRoboticsNext"
+		},
+		{
+			"name": "unBlur"
+		},
+		{
+			"name": "UKS"
+		},
+		{
+			"name": "USI-ART"
+		},
+		{
+			"name": "USI-EXP"
+		},
+		{
+			"name": "USI-FTT"
+		},
+		{
+			"name": "Konstruction"
+		},
+		{
+			"name": "GroundConstruction"
+		},
+		{
+			"name": "AT-Utils"
+		},
+		{
+			"name": "ConfigurableContainers-Core"
+		},
+		{
+			"name": "GroundConstruction-Core"
+		},
+		{
+			"name": "ConfigurableContainers"
+		},
+		{
+			"name": "KSP-AVC"
+		},
+		{
+			"name": "SCANsat"
+		},
+		{
+			"name": "RasterPropMonitor"
+		},
+		{
+			"name": "RasterPropMonitor-Core"
+		},
+		{
+			"name": "KerbalJointReinforcementNext"
+		},
+		{
+			"name": "KEI"
+		},
+		{
+			"name": "DynamicBatteryStorage"
+		},
+		{
+			"name": "LaunchNumbering"
+		},
+		{
+			"name": "Kethane"
+		},
+		{
+			"name": "DockingPortAlignmentIndicator"
+		},
+		{
+			"name": "RetractableLiftingSurface"
+		},
+		{
+			"name": "xScienceContinued"
+		}
+	]
+}
