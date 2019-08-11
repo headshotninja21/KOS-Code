@@ -1,4 +1,9 @@
 clearscreen.
+lock throttle to 0.
+
+set LZ1 to Kerbin:GEOPOSITIONLATLNG(-0.205696204473359,-74.473087316585).
+set Landpos to ADDONS:TR:SETTARGET(LZ1).
+
 print "Falcon 9 RLTS flight".
 
 set lastxe to 0.
@@ -283,9 +288,9 @@ function Xpid
 {
     parameter Xdist.
 
-    set xkP to 1.
-    set xkI to 0.5.
-    set xkD to 0.5.
+    set xkP to 50.
+    set xkI to .01.
+    set xkD to .1.
 
     set targetX to -74.473087316585.
 
@@ -301,14 +306,18 @@ function Xpid
         set xI to totalxe + ((xP + lastxe)/2 * (now - lastxTime)).
         set xD to ((xP - lastxe)/(now - lastxTime)).
     }
-    
+    if xP > 0
+    {
+        set xD to -xD.
+        set totalxe to 0.
+    }
     set lastxe to xP.
     set lastxTime to now.
     set totalxe to xI.
 
     set xoutput to xP * xkP + xI * xkI + xD + xkD.
 
-    print "Xdist " + "P " + xP + " I " + xI + " D " + xD + " Output " + xoutput at (0,16).
+    print "Xdist " + "P " +  xP + " I " +  xI + " D " +  xD + " Output " + xoutput at (0,16).
 
     return xoutput.
 }
@@ -316,9 +325,9 @@ function Ypid
 {
     parameter Ydist.
 
-    set ykP to 1.
-    set ykI to 0.5.
-    set ykD to 0.5.
+    set ykP to 50.
+    set ykI to .01.
+    set ykD to .1.
 
     set targetY to -0.205696204473359.
 
@@ -334,12 +343,16 @@ function Ypid
         set yI to totalye + ((yP + lastye)/2 * (now - lastyTime)).
         set yD to ((yP - lastye)/(now - lastyTime)).
     }
-    
+    if yP < 0
+    {
+        set yD to -yD.
+        set totalye to 0.
+    }
     set lastye to yP.
     set lastyTime to now.
     set totalye to yI.
 
-    set xoutput to yP * ykP + yI * ykI + yD + ykD.
+    set youtput to yP * ykP + yI * ykI + yD + ykD.
 
     print "ydist " + "P " + yP + " I " + yI + " D " + yD + " Output " + youtput at (0,18).
 
@@ -356,11 +369,11 @@ else if ship:STATUS = "FLYING"
     {
         SET impactDist TO calcDistance(LZ1, ADDONS:TR:IMPACTPOS).
     }
-    if ship:RESOURCES[0]:Amount < 2300
+    if ship:mass < 2301
     {
         Boostback().
     }
-    else if ship:RESOURCES > 2300
+    else if ship:RESOURCES[0] > 2300
     {
         orbit().
     }

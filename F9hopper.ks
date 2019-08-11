@@ -1,4 +1,5 @@
 clearscreen.
+lock throttle to 0.
 print "Falcon 9 Grasshopper flight" at (0,1).
 
 set i to 1.
@@ -39,7 +40,7 @@ wait 3.
 lock steering to up + R(0,0,90).
 
 lock throttle to 1.
-wait 20.
+wait 30.
 lock throttle to 0.
 until false
 {
@@ -79,8 +80,11 @@ function hover
         
         set x to Xpid(Impact:LNG).
         set y to Ypid(Impact:LAT).
-            
-        lock steering to up + R(y,-x,90).
+        
+        set xP to (-74.473087316585 - Impact:LNG).
+        set yP to (-0.205696204473359 - Impact:LAT).
+
+        lock steering to up + R(-y,-x,90).
         
         lock throttle to tval.
         
@@ -99,6 +103,42 @@ function hover
             set tval to tval - .005.
             lock throttle to tval.
         }
+        if xP < 0 
+        {
+            lock throttle to 0.
+            Land().
+        }
+        if yP < 0
+        {
+            lock throttle to 0.
+            Land().
+        }
+    }
+}
+function Land
+{
+    print "Landing start".
+    until ship:status = "Landed"
+    {
+        set maxTWR to ship:availablethrust/(ship:mass*constant:g0).
+        set MaxA to maxTWR*constant:g0.
+        set gravVertA to (ship:availablethrust/ship:mass)-constant:g0.
+        set totalHStime to ship:verticalspeed^2 / (2.5 * gravVertA).
+     
+        set burn to (totalHStime / (ship:altitude + 200)) + .47.
+
+        set Impact to ADDONS:TR:IMPACTPOS.
+        
+        set x to Xpid(Impact:LNG).
+        set y to Ypid(Impact:LAT).
+        
+        lock steering to up + R(y,x,90).
+        
+        if ship:altitude <= totalHStime
+        {
+            lock throttle to burn.
+        }
+        
     }
 }
 function speedPIDLoop
@@ -163,9 +203,9 @@ function Xpid
 {
     parameter Xdist.
 
-    set xkP to 1.5.
-    set xkI to .003.
-    set xkD to .4.
+    set xkP to 50.
+    set xkI to .01.
+    set xkD to .1.
 
     set targetX to -74.473087316585.
 
@@ -181,14 +221,18 @@ function Xpid
         set xI to totalxe + ((xP + lastxe)/2 * (now - lastxTime)).
         set xD to ((xP - lastxe)/(now - lastxTime)).
     }
-    
+    if xP > 0
+    {
+        set xD to -xD.
+        set totalxe to 0.
+    }
     set lastxe to xP.
     set lastxTime to now.
     set totalxe to xI.
 
     set xoutput to xP * xkP + xI * xkI + xD + xkD.
 
-    print "Xdist " + "P " + xP + " I " + xI + " D " + xD + " Output " + xoutput at (0,16).
+    print "Xdist " + "P " +  xP + " I " +  xI + " D " +  xD + " Output " + xoutput at (0,16).
 
     return xoutput.
 }
@@ -196,9 +240,9 @@ function Ypid
 {
     parameter Ydist.
 
-    set ykP to 1.
-    set ykI to .5.
-    set ykD to 1.
+    set ykP to 50.
+    set ykI to .01.
+    set ykD to .1.
 
     set targetY to -0.205696204473359.
 
@@ -214,12 +258,16 @@ function Ypid
         set yI to totalye + ((yP + lastye)/2 * (now - lastyTime)).
         set yD to ((yP - lastye)/(now - lastyTime)).
     }
-    
+    if yP < 0
+    {
+        set yD to -yD.
+        set totalye to 0.
+    }
     set lastye to yP.
     set lastyTime to now.
     set totalye to yI.
 
-    set xoutput to yP * ykP + yI * ykI + yD + ykD.
+    set youtput to yP * ykP + yI * ykI + yD + ykD.
 
     print "ydist " + "P " + yP + " I " + yI + " D " + yD + " Output " + youtput at (0,18).
 
